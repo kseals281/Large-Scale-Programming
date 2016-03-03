@@ -5,11 +5,11 @@ import java.util.Properties;
 
 public class PhoneDirectory {
 	
-	private Properties prop = new Properties();
-	
-	public PhoneDirectory()
-	{
+	public static String getNumber(String name) {
+		Properties prop = new Properties();
 		InputStream prop_input = null;
+		String number = "";
+		String line;
 		
 		try
 		{
@@ -29,21 +29,6 @@ public class PhoneDirectory {
 				}
 			}
 		}
-	}
-	
-	public void addEntry(String name, String number)
-	{
-		
-	}
-	
-	public void deleteEntry(String name)
-	{
-		
-	}
-	
-	public String getNumber(String name) {
-		String number = "";
-		String line;
 		
 		try ( BufferedReader directory = new BufferedReader(new FileReader(prop.getProperty("path"))))
 		{			

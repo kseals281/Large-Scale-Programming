@@ -5,16 +5,17 @@ import java.util.Properties;
 
 public class PhoneDirectory {
 	
-	private Properties prop = new Properties();
-	
-	public PhoneDirectory()
-	{
+	public static String getNumber(String name) {
+		Properties prop = new Properties();
 		InputStream prop_input = null;
+		String number = "";
+		String line;
 		
 		try
 		{
 			prop_input = new FileInputStream("src/main/resources/phone.properties");
 			prop.load(prop_input);
+			System.out.println(prop.getProperty("path"));
 		} catch (IOException ex) {
 			// TODO Auto-generated catch block
 			ex.printStackTrace();
@@ -29,29 +30,16 @@ public class PhoneDirectory {
 				}
 			}
 		}
-	}
-	
-	public void addEntry(String name, String number)
-	{
-		
-	}
-	
-	public void deleteEntry(String name)
-	{
-		
-	}
-	
-	public String getNumber(String name) {
-		String number = "";
-		String line;
 		
 		try ( BufferedReader directory = new BufferedReader(new FileReader(prop.getProperty("path"))))
 		{			
 			while ((line = directory.readLine()) != null) {
 				String[] lineArr = new String[3]; 
 		        lineArr = line.split(" ");
-		        String catname = (lineArr[0] + " " + lineArr[1]);
-		        if (name.contains(catname))
+		        System.out.print(lineArr[0]);
+		        System.out.print(lineArr[1]);
+		        break;
+		        if ((lineArr[0] + " " + lineArr[1]) == name)
 		        {
 		        	return lineArr[2];
 		        }
@@ -62,11 +50,6 @@ public class PhoneDirectory {
 			ex.printStackTrace();
 		}
 		return number;
-		
-	}
-	
-	public void changeEntry(String name, String number)
-	{
 		
 	}
 

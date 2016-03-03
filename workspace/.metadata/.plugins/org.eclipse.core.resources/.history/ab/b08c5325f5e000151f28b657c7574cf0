@@ -5,11 +5,11 @@ import java.util.Properties;
 
 public class PhoneDirectory {
 	
-	private Properties prop = new Properties();
+	Properties prop = new Properties();
+	InputStream prop_input = null;
 	
 	public PhoneDirectory()
 	{
-		InputStream prop_input = null;
 		
 		try
 		{

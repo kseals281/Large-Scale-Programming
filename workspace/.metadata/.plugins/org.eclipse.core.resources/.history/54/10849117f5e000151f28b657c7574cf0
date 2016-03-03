@@ -5,10 +5,9 @@ import java.util.Properties;
 
 public class PhoneDirectory {
 	
-	private Properties prop = new Properties();
-	
 	public PhoneDirectory()
 	{
+		Properties prop = new Properties();
 		InputStream prop_input = null;
 		
 		try
