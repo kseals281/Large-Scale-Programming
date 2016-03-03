@@ -1,0 +1,8 @@
+C:\Program Files\Java\jdk1.7.0_79;1;7;0;64;true;1444504688495
+C:\Program Files (x86)\Java\jre1.8.0_45;1;8;0;32;false;1434240273482
+C:\Program Files (x86)\Java\jre1.8.0_51;1;8;0;32;false;1438407742580
+C:\Program Files\Java\jre7;1;7;0;64;false;1444504698465
+C:\Program Files (x86)\Java\jre1.8.0_25;1;8;0;32;false;1421895575183
+C:\Program Files (x86)\Java\jre1.8.0_60;1;8;0;32;false;1440383007925
+C:\Program Files (x86)\Java\jre1.8.0_40;1;8;0;32;false;1428108745285
+C:\Program Files (x86)\Java\jre1.8.0_31;1;8;0;32;false;1425172167192

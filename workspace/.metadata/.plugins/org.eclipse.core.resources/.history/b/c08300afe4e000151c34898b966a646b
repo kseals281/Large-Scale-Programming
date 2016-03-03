@@ -1,0 +1,21 @@
+package main.java;
+
+import java.io.*;
+import java.util.Properties;
+
+public class PhoneDirectory {
+
+	public static void main(String[] args) {
+		Properties prop = new Properties();
+		InputStream input = null;
+		
+		try {
+			input = new FileInputStream("phone.properties");
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+	}
+
+}
