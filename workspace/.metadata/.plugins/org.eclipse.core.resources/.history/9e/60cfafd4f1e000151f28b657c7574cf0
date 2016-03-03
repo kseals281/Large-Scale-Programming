@@ -13,7 +13,6 @@ public class PhoneDirectory {
 		
 		try
 		{
-			prop_input = new FileInputStream("src/main/resources/phone.properties");
 			prop.load(prop_input);
 			System.out.println(prop.getProperty("path"));
 		} catch (IOException ex) {

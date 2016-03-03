@@ -1,0 +1,54 @@
+package main.java;
+
+import java.io.*;
+import java.util.Properties;
+
+public class PhoneDirectory {
+
+	public static void main(String[] args) {
+		String name_to_find = "Khari Seals";
+		
+		int number = getNumber(name_to_find);
+		
+
+	}
+	
+	public static String getNumber(String name) {
+		Properties prop = new Properties();
+		InputStream prop_input = null;
+		FileReader directory = null;
+		String number;
+		
+		try (BufferedReader br = new BufferedReader(new FileReader("src/main/resources/phone.properties")))
+		{
+			prop.load(prop_input);
+			System.out.println(prop.getProperty("path"));
+			
+			directory = new FileReader(prop.getProperty("path"));
+			System.out.println(number);
+			
+		    String line;
+		    while ((line = br.readLine()) != null) {
+		    	String[] lineArr = new String[3]; 
+		        lineArr = line.split(" ");
+		        if ((lineArr[0] + " " + lineArr[1]) == name) {
+		        	break;
+		       }
+		    }
+		} catch (IOException ex) {
+			// TODO Auto-generated catch block
+			ex.printStackTrace();
+		} finally {
+			if (prop_input != null) {
+				try {
+					prop_input.close();
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+			}
+		}
+		return number;
+		
+	}
+
+}

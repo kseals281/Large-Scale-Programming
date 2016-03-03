@@ -4,16 +4,24 @@ import java.io.*;
 import java.util.Properties;
 
 public class PhoneDirectory {
+
+	public static void main(String[] args) {
+		String name_to_find = "Khari Seals";
+		
+		String number = getNumber(name_to_find);
+		System.out.println(number);
+		
+
+	}
 	
 	public static String getNumber(String name) {
 		Properties prop = new Properties();
 		InputStream prop_input = null;
-		String number = "";
-		String line;
+		BufferedReader directory;
+		String number, line;
 		
 		try
 		{
-			prop_input = new FileInputStream("src/main/resources/phone.properties");
 			prop.load(prop_input);
 			System.out.println(prop.getProperty("path"));
 		} catch (IOException ex) {
@@ -31,7 +39,7 @@ public class PhoneDirectory {
 			}
 		}
 		
-		try ( BufferedReader directory = new BufferedReader(new FileReader(prop.getProperty("path"))))
+		try ( directory = new BufferedReader(new FileReader(prop.getProperty("path"))))
 		{			
 			while ((line = directory.readLine()) != null) {
 				String[] lineArr = new String[3]; 
@@ -41,10 +49,17 @@ public class PhoneDirectory {
 		        	return lineArr[2];
 		        }
 		    }
-			System.out.println("Unable to find number");
 		} catch (IOException ex) {
 			// TODO Auto-generated catch block
 			ex.printStackTrace();
+		} finally {
+			if (directory != null) {
+				try {
+					prop_input.close();
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+			}
 		}
 		return number;
 		

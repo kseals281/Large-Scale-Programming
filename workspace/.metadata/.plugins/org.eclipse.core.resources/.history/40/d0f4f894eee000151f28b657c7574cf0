@@ -4,48 +4,46 @@ import java.io.*;
 import java.util.Properties;
 
 public class PhoneDirectory {
-	
-	public static String getNumber(String name) {
+
+	public static void main(String[] args) {
 		Properties prop = new Properties();
 		InputStream prop_input = null;
-		String number = "";
-		String line;
+		FileReader directory = null;
 		
-		try
-		{
+		try {
 			prop_input = new FileInputStream("src/main/resources/phone.properties");
 			prop.load(prop_input);
 			System.out.println(prop.getProperty("path"));
+			
+			directory = new FileReader(prop.getProperty("path"));
+			System.out.println(directory.read());
 		} catch (IOException ex) {
 			// TODO Auto-generated catch block
 			ex.printStackTrace();
 		} finally {
 			if (prop_input != null) {
-				try
-				{
+				try {
 					prop_input.close();
-				} catch (IOException e)
-				{
+				} catch (IOException e) {
 					e.printStackTrace();
 				}
 			}
 		}
-		
-		try ( BufferedReader directory = new BufferedReader(new FileReader(prop.getProperty("path"))))
-		{			
-			while ((line = directory.readLine()) != null) {
-				String[] lineArr = new String[3]; 
+
+	}
+	
+	public static String getNumber(String name) {
+		try (BufferedReader br = new BufferedReader(new FileReader(file))) {
+		    String line;
+		    while ((line = br.readLine()) != null) {
+		    	String[] lineArr = new String[3]; 
 		        lineArr = line.split(" ");
-		        if ((lineArr[0] + " " + lineArr[1]) == name)
-		        {
-		        	return lineArr[2];
-		        }
+		        if ((lineArr[0] + " " + lineArr[1]) == name) {
+		        	break;
+		       }
 		    }
-			System.out.println("Unable to find number");
-		} catch (IOException ex) {
-			// TODO Auto-generated catch block
-			ex.printStackTrace();
 		}
+		int number = 0;
 		return number;
 		
 	}
