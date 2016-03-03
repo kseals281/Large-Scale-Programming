@@ -16,7 +16,7 @@ public class PhoneDirectory {
 			System.out.println(prop.getProperty("path"));
 			
 			directory = new FileReader(prop.getProperty("path"));
-			System.out.println(directory.read());
+			System.out.println(directory.read(null));
 		} catch (IOException ex) {
 			// TODO Auto-generated catch block
 			ex.printStackTrace();

@@ -7,16 +7,18 @@ public class PhoneDirectory {
 
 	public static void main(String[] args) {
 		Properties prop = new Properties();
+		Properties dir_prop = new Properties();
 		InputStream prop_input = null;
-		FileReader directory = null;
+		InputStream directory = null;
 		
 		try {
 			prop_input = new FileInputStream("src/main/resources/phone.properties");
 			prop.load(prop_input);
 			System.out.println(prop.getProperty("path"));
 			
-			directory = new FileReader(prop.getProperty("path"));
-			System.out.println(directory.read());
+			directory =  new FileInputStream(prop.getProperty("path"));
+			dir_prop.load(directory);
+			System.out.println(dir_prop.getProperty("name"));
 		} catch (IOException ex) {
 			// TODO Auto-generated catch block
 			ex.printStackTrace();
@@ -30,22 +32,6 @@ public class PhoneDirectory {
 			}
 		}
 
-	}
-	
-	public static String getNumber(String name) {
-		try (BufferedReader br = new BufferedReader(new FileReader(file))) {
-		    String line;
-		    while ((line = br.readLine()) != null) {
-		    	String[] lineArr = new String[3]; 
-		        lineArr = line.split(" ");
-		        if ((lineArr[0] + " " + lineArr[1]) == name) {
-		        	break;
-		       }
-		    }
-		}
-		int number = 0;
-		return number;
-		
 	}
 
 }
