@@ -14,4 +14,11 @@
 	<natures>
 		<nature>org.eclipse.jdt.core.javanature</nature>
 	</natures>
+	<linkedResources>
+		<link>
+			<name>src/main/resources/directory.txt</name>
+			<type>1</type>
+			<location>C:/Users/Khari/Large-Scale-Programming/workspace/PhoneDirectory/src/main/resources/directory.txt</location>
+		</link>
+	</linkedResources>
 </projectDescription>
