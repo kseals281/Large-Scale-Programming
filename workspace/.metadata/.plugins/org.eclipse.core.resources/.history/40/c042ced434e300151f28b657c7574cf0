@@ -8,9 +8,6 @@ public class PhoneDirectory {
 	private Properties prop = new Properties();
 	private String path = null;
 	
-	/**
-	 * Initializes the object with the proper location of the properties file. The properties file holds the location of the correct directory file.
-	 */
 	public PhoneDirectory()
 	{
 		InputStream prop_input = null;
@@ -36,13 +33,9 @@ public class PhoneDirectory {
 		}
 	}
 	
-	/**
-	 * Adds an entry to the directory
-	 * @param name
-	 * @param number
-	 */
 	public void addEntry(String name, String number)
 	{
+		System.out.println(name + " " + number);
 		try
 		{
 			Writer writer = new FileWriter(path, true);
@@ -54,12 +47,6 @@ public class PhoneDirectory {
 		
 	}
 	
-	/**
-	 * Deletes an entry from the directory by creating a temporary file and copying all entries into the new file.
-	 * Then replaces the old file with the temporary file.
-	 * @param name
-	 * @throws IOException
-	 */
 	public void deleteEntry(String name) throws IOException
 	{
 		File temp = new File("src/main/resources/temp.txt");
@@ -87,11 +74,6 @@ public class PhoneDirectory {
 
 	}
 	
-	/**
-	 * Gets the number from the directory that corresponds to the given name
-	 * @param name
-	 * @return The number associated with the name
-	 */
 	public String getNumber(String name) {
 		String number = "";
 		String line;
@@ -115,13 +97,6 @@ public class PhoneDirectory {
 		return number;
 	}
 	
-	/**
-	 * Changes an entry in the directory be calling delete entry and then add entry
-	 * @param name 
-	 * @param number
-	 * 
-	 * @return void 
-	 */
 	public void changeEntry(String name, String number)
 	{
 		try {
