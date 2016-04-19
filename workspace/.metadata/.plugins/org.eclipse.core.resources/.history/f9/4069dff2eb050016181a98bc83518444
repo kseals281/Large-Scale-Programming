@@ -1,0 +1,12 @@
+package test;
+
+import main.java.*;
+
+public class Main()
+{
+	public static void main()
+	{
+		
+	}
+	
+}
