@@ -1,12 +1,14 @@
 package main.java;
 
-import java.math.BigInteger;
-
 public class Term {
 	
 	private int coefficient, exponent, value;
 	private String expression;
 	
+	/**Saves the coefficient, exponent, and calculates the total value
+	 * @param givenCoefficient
+	 * @param givenExponent
+	 */
 	public Term(int givenCoefficient, int givenExponent)
 	{
 		coefficient = givenCoefficient;
@@ -31,6 +33,11 @@ public class Term {
 	public int getExponent()
 	{
 		return exponent;
+	}
+	
+	public int getCoefficient()
+	{
+		return coefficient;
 	}
 	
 	public int getValue() {
