@@ -29,10 +29,9 @@ public class Main
 				Term myTerm = new Term(base, exp);
 				myPolynomial.insert(myTerm);
 			}
-			System.out.println("---------------Polynomial " + name + "---------------");
+			System.out.println("Polynomial " + name + ": " + myPolynomial.getList());
 			while(operations.ready())
 			{
-				System.out.println("Polynomial " + name + ": " + myPolynomial.getList());
 				String read = operations.readLine();
 				System.out.println(read);
 				line = read.split(" ");

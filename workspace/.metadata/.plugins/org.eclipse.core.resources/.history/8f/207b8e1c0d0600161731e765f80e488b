@@ -29,10 +29,9 @@ public class Main
 				Term myTerm = new Term(base, exp);
 				myPolynomial.insert(myTerm);
 			}
-			System.out.println("---------------Polynomial " + name + "---------------");
+			System.out.println("Polynomial " + name + ": " + myPolynomial.getList());
 			while(operations.ready())
 			{
-				System.out.println("Polynomial " + name + ": " + myPolynomial.getList());
 				String read = operations.readLine();
 				System.out.println(read);
 				line = read.split(" ");
@@ -44,6 +43,7 @@ public class Main
 				if(line[0].equals("DELETE"))
 				{
 					Term termToDelete = new Term(Integer.parseInt(line[1]), Integer.parseInt(line[2]));
+					System.out.println(termToDelete.getExponent());
 					myPolynomial.deleteTerm(termToDelete);
 				}
 				if(line[0].equals("REVERSE"))
@@ -80,7 +80,6 @@ public class Main
 //		Term myTerm2 = new Term(-5, 2);
 //		Term myTerm3 = new Term(9, 1);
 //		Term myTerm4 = new Term(8, 2);
-//		Term myTerm5 = new Term(-5, 2);
 //		Polynomial myPolynomial = new Polynomial();
 //		myPolynomial.insert(myTerm);
 //		myPolynomial.insert(myTerm2);
@@ -93,7 +92,7 @@ public class Main
 //		int value = myPolynomial.getTotalValue();
 //		System.out.println("Value: " + value);
 //		
-//		myPolynomial.deleteTerm(myTerm5);
+//		myPolynomial.deleteTerm(myTerm2);
 //		expression = myPolynomial.getList();
 //		System.out.println("List after deleting a term: " + expression);
 //		

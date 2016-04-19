@@ -66,16 +66,8 @@ public class Polynomial
 	 */
 	public void deleteTerm(Term termToDelete)
 	{
-		boolean removed = false;
-		for (int i = 0; i < polynomialExpression.size(); i++) {
-			if(polynomialExpression.get(i).getCoefficient() == termToDelete.getCoefficient() &&
-				polynomialExpression.get(i).getExponent() == termToDelete.getExponent())
-			{
-				polynomialExpression.remove(i);
-				removed = true;
-				break;
-			}
-		}
+		System.out.println(polynomialExpression.get(0).toString() + termToDelete.toString());
+		boolean removed = polynomialExpression.remove(termToDelete);
 		if (!removed) {
 			System.out.println("Term given was not in the polynomial and was therefore not removed");
 		}
