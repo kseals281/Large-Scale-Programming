@@ -1,0 +1,41 @@
+package main.java;
+
+import java.util.ArrayList;
+
+public class Polynomial
+{
+	private ArrayList<Term> polynomialExpression;
+	public Polynomial()
+	{
+		polynomialExpression = new ArrayList<>();
+	}
+	
+	public void insert(Term newTerm)
+	{
+		if (polynomialExpression.size() == 0) {
+			polynomialExpression.add(0, newTerm);
+			return;
+		}
+		Term current = newTerm;
+		System.out.println("Exponent: " + Integer.toString(current.getExponent()));
+		for (int i = 0; i < polynomialExpression.size(); i++) {
+			if (polynomialExpression.get(i).getExponent() > current.getExponent()) {
+				Term temp = polynomialExpression.get(i);
+				polynomialExpression.set(i, current);
+				current = temp;
+			}
+		}
+		polynomialExpression.add(current);
+	}
+	
+	public String getList()
+	{
+		String myList = "";
+		for (int i = 0; i < polynomialExpression.size(); i++) {
+			if (i > 0) {
+				myList += " + ";
+			}
+			myList += polynomialExpression.get(i).toString();
+		}
+	}
+}
