@@ -3,6 +3,7 @@ package main.java;
 public class Term {
 	
 	private int coefficient, exponent, value;
+	private String expression;
 	
 	/**Saves the coefficient, exponent, and calculates the total value
 	 * @param givenCoefficient
@@ -17,7 +18,6 @@ public class Term {
 	
 	public String toString()
 	{
-		String expression = "";
 		if (exponent == 0) {
 			return Integer.toString(coefficient);
 		}
