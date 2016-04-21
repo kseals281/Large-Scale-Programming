@@ -49,6 +49,18 @@ public class Polynomial
 		return myList;
 	}
 	
+	/**Calculates the value of the expression
+	 * @return
+	 */
+	public int getTotalValue()
+	{
+		int total = 0;
+		for (int i = 0; i < polynomialExpression.size(); i++) {
+			total += polynomialExpression.get(i).getValue();
+		}
+		return total;
+	}
+	
 	/**Deletes a term from the array list by removing it and then removing the space from the list
 	 * @param termToDelete
 	 */

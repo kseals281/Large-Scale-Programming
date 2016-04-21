@@ -32,6 +32,7 @@ public class Main
 			System.out.println("---------------Polynomial " + name + "---------------");
 			while(operations.ready())
 			{
+				System.out.println("Polynomial " + name + ": " + myPolynomial.getList());
 				String read = operations.readLine();
 				System.out.println(read);
 				line = read.split(" ");
@@ -51,8 +52,9 @@ public class Main
 				}
 				if(line[0].equals("PRODUCT"))
 				{
-					System.out.println(myPolynomial.getList());
+					System.out.println(myPolynomial.getTotalValue());
 				}
+				System.out.println("Polynomial " + name + ": " + myPolynomial.getList());
 				System.out.println("");
 			}
 			operations.close();

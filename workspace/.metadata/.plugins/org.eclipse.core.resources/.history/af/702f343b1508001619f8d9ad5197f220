@@ -51,7 +51,7 @@ public class Main
 				}
 				if(line[0].equals("PRODUCT"))
 				{
-					System.out.println(myPolynomial.getList());
+					System.out.println(myPolynomial.getTotalValue());
 				}
 				System.out.println("");
 			}
